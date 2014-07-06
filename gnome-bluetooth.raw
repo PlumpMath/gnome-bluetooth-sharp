@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<api parser_version="2">
+  <!--
+
+        This file was automatically generated.
+        Please DO NOT MODIFY THIS FILE, modify .metadata files instead.
+
+-->
+  <namespace name="Bluetooth" library="libgnome-bluetooth.dll">
+    <enum name="Category" cname="BluetoothCategory" type="enum">
+      <member cname="BLUETOOTH_CATEGORY_ALL" name="All" />
+      <member cname="BLUETOOTH_CATEGORY_PAIRED" name="Paired" />
+      <member cname="BLUETOOTH_CATEGORY_TRUSTED" name="Trusted" />
+      <member cname="BLUETOOTH_CATEGORY_NOT_PAIRED_OR_TRUSTED" name="NotPairedOrTrusted" />
+      <member cname="BLUETOOTH_CATEGORY_PAIRED_OR_TRUSTED" name="PairedOrTrusted" />
+      <member cname="BLUETOOTH_CATEGORY_NUM_CATEGORIES" name="NumCategories" />
+    </enum>
+    <enum name="Column" cname="BluetoothColumn" type="enum">
+      <member cname="BLUETOOTH_COLUMN_PROXY" name="ColumnProxy" />
+      <member cname="BLUETOOTH_COLUMN_PROPERTIES" name="ColumnProperties" />
+      <member cname="BLUETOOTH_COLUMN_ADDRESS" name="ColumnAddress" />
+      <member cname="BLUETOOTH_COLUMN_ALIAS" name="ColumnAlias" />
+      <member cname="BLUETOOTH_COLUMN_NAME" name="ColumnName" />
+      <member cname="BLUETOOTH_COLUMN_TYPE" name="ColumnType" />
+      <member cname="BLUETOOTH_COLUMN_ICON" name="ColumnIcon" />
+      <member cname="BLUETOOTH_COLUMN_DEFAULT" name="ColumnDefault" />
+      <member cname="BLUETOOTH_COLUMN_PAIRED" name="ColumnPaired" />
+      <member cname="BLUETOOTH_COLUMN_TRUSTED" name="ColumnTrusted" />
+      <member cname="BLUETOOTH_COLUMN_CONNECTED" name="ColumnConnected" />
+      <member cname="BLUETOOTH_COLUMN_DISCOVERABLE" name="ColumnDiscoverable" />
+      <member cname="BLUETOOTH_COLUMN_DISCOVERING" name="ColumnDiscovering" />
+      <member cname="BLUETOOTH_COLUMN_LEGACYPAIRING" name="ColumnLegacypairing" />
+      <member cname="BLUETOOTH_COLUMN_POWERED" name="ColumnPowered" />
+      <member cname="BLUETOOTH_COLUMN_SERVICES" name="ColumnServices" />
+      <member cname="BLUETOOTH_COLUMN_UUIDS" name="ColumnUuids" />
+      <member cname="BLUETOOTH_NUM_COLUMNS" name="NumColumns" />
+    </enum>
+    <enum name="KillswitchState" cname="BluetoothKillswitchState" type="enum">
+      <member cname="BLUETOOTH_KILLSWITCH_STATE_NO_ADAPTER" name="NoAdapter" value="-1" />
+      <member cname="BLUETOOTH_KILLSWITCH_STATE_SOFT_BLOCKED" name="SoftBlocked" />
+      <member cname="BLUETOOTH_KILLSWITCH_STATE_UNBLOCKED" name="Unblocked" />
+      <member cname="BLUETOOTH_KILLSWITCH_STATE_HARD_BLOCKED" name="HardBlocked" />
+    </enum>
+    <enum name="Status" cname="BluetoothStatus" type="enum">
+      <member cname="BLUETOOTH_STATUS_INVALID" name="Invalid" />
+      <member cname="BLUETOOTH_STATUS_DISCONNECTED" name="Disconnected" />
+      <member cname="BLUETOOTH_STATUS_CONNECTED" name="Connected" />
+      <member cname="BLUETOOTH_STATUS_CONNECTING" name="Connecting" />
+      <member cname="BLUETOOTH_STATUS_PLAYING" name="Playing" />
+    </enum>
+    <enum name="Type" cname="BluetoothType" type="flags">
+      <member cname="BLUETOOTH_TYPE_ANY" name="Any" value="1 &lt;&lt; 0" />
+      <member cname="BLUETOOTH_TYPE_PHONE" name="Phone" value="1 &lt;&lt; 1" />
+      <member cname="BLUETOOTH_TYPE_MODEM" name="Modem" value="1 &lt;&lt; 2" />
+      <member cname="BLUETOOTH_TYPE_COMPUTER" name="Computer" value="1 &lt;&lt; 3" />
+      <member cname="BLUETOOTH_TYPE_NETWORK" name="Network" value="1 &lt;&lt; 4" />
+      <member cname="BLUETOOTH_TYPE_HEADSET" name="Headset" value="1 &lt;&lt; 5" />
+      <member cname="BLUETOOTH_TYPE_HEADPHONES" name="Headphones" value="1 &lt;&lt; 6" />
+      <member cname="BLUETOOTH_TYPE_OTHER_AUDIO" name="OtherAudio" value="1 &lt;&lt; 7" />
+      <member cname="BLUETOOTH_TYPE_KEYBOARD" name="Keyboard" value="1 &lt;&lt; 8" />
+      <member cname="BLUETOOTH_TYPE_MOUSE" name="Mouse" value="1 &lt;&lt; 9" />
+      <member cname="BLUETOOTH_TYPE_CAMERA" name="Camera" value="1 &lt;&lt; 10" />
+      <member cname="BLUETOOTH_TYPE_PRINTER" name="Printer" value="1 &lt;&lt; 11" />
+      <member cname="BLUETOOTH_TYPE_JOYPAD" name="Joypad" value="1 &lt;&lt; 12" />
+      <member cname="BLUETOOTH_TYPE_TABLET" name="Tablet" value="1 &lt;&lt; 13" />
+      <member cname="BLUETOOTH_TYPE_VIDEO" name="Video" value="1 &lt;&lt; 14" />
+    </enum>
+    <object name="Chooser" cname="BluetoothChooser" parent="GtkBox">
+      <class_struct cname="BluetoothChooserClass">
+        <field name="ParentClass" cname="parent_class" type="GtkBoxClass" />
+        <method vm="selected_device_changed" />
+        <method vm="selected_device_activated" />
+      </class_struct>
+      <virtual_method name="SelectedDeviceChanged" cname="selected_device_changed">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="address" />
+        </parameters>
+      </virtual_method>
+      <virtual_method name="SelectedDeviceActivated" cname="selected_device_activated">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="address" />
+        </parameters>
+      </virtual_method>
+      <method name="DumpSelectedDevice" cname="bluetooth_chooser_dump_selected_device">
+        <return-type type="void" />
+      </method>
+      <method name="GetScrolledWindow" cname="bluetooth_chooser_get_scrolled_window">
+        <return-type type="GtkWidget*" />
+      </method>
+      <method name="GetSelectedDevice" cname="bluetooth_chooser_get_selected_device">
+        <return-type type="char*" />
+      </method>
+      <method name="GetSelectedDeviceIcon" cname="bluetooth_chooser_get_selected_device_icon">
+        <return-type type="char*" />
+      </method>
+      <method name="GetSelectedDeviceInfo" cname="bluetooth_chooser_get_selected_device_info">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="const-char*" name="field" />
+          <parameter type="GValue*" name="value" />
+        </parameters>
+      </method>
+      <method name="GetSelectedDeviceIsConnected" cname="bluetooth_chooser_get_selected_device_is_connected">
+        <return-type type="gboolean" />
+      </method>
+      <method name="GetSelectedDeviceName" cname="bluetooth_chooser_get_selected_device_name">
+        <return-type type="char*" />
+      </method>
+      <method name="GetSelectedDeviceType" cname="bluetooth_chooser_get_selected_device_type">
+        <return-type type="BluetoothType" />
+      </method>
+      <method name="GetType" cname="bluetooth_chooser_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <constructor cname="bluetooth_chooser_new" />
+      <method name="StartDiscovery" cname="bluetooth_chooser_start_discovery">
+        <return-type type="void" />
+      </method>
+      <method name="StopDiscovery" cname="bluetooth_chooser_stop_discovery">
+        <return-type type="void" />
+      </method>
+    </object>
+    <object name="ChooserButton" cname="BluetoothChooserButton">
+      <class_struct cname="BluetoothChooserButtonClass">
+        <field name="ParentClass" cname="parent_class" type="GtkButtonClass" />
+        <method vm="chooser_created" />
+      </class_struct>
+      <virtual_method name="ChooserCreated" cname="chooser_created">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkWidget*" name="chooser" />
+        </parameters>
+      </virtual_method>
+      <method name="Available" cname="bluetooth_chooser_button_available">
+        <return-type type="gboolean" />
+      </method>
+      <method name="GetType" cname="bluetooth_chooser_button_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <constructor cname="bluetooth_chooser_button_new" />
+    </object>
+    <object name="ChooserCombo" cname="BluetoothChooserCombo">
+      <class_struct cname="BluetoothChooserComboClass">
+        <field name="ParentClass" cname="parent_class" type="GtkBoxClass" />
+        <method vm="chooser_created" />
+      </class_struct>
+      <virtual_method name="ChooserCreated" cname="chooser_created">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="GtkWidget*" name="chooser" />
+        </parameters>
+      </virtual_method>
+      <method name="GetType" cname="bluetooth_chooser_combo_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <constructor cname="bluetooth_chooser_combo_new" />
+    </object>
+    <object name="Client" cname="BluetoothClient" parent="GObject">
+      <class_struct cname="BluetoothClientClass">
+        <field name="ParentClass" cname="parent_class" type="GObjectClass" />
+      </class_struct>
+      <method name="ConnectService" cname="bluetooth_client_connect_service">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="path" />
+          <parameter type="gboolean" name="connect" />
+          <parameter type="GCancellable*" name="cancellable" />
+          <parameter type="GAsyncReadyCallback" name="callback" />
+          <parameter type="gpointer" name="user_data" />
+        </parameters>
+      </method>
+      <method name="ConnectServiceFinish" cname="bluetooth_client_connect_service_finish">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="GAsyncResult*" name="res" />
+          <parameter type="GError**" name="error" />
+        </parameters>
+      </method>
+      <method name="GetAdapterModel" cname="bluetooth_client_get_adapter_model">
+        <return-type type="GtkTreeModel*" />
+      </method>
+      <method name="GetConnectable" cname="bluetooth_client_get_connectable" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="const-char**" name="uuids" />
+        </parameters>
+      </method>
+      <method name="GetDeviceModel" cname="bluetooth_client_get_device_model">
+        <return-type type="GtkTreeModel*" />
+      </method>
+      <method name="GetFilterModel" cname="bluetooth_client_get_filter_model">
+        <return-type type="GtkTreeModel*" />
+        <parameters>
+          <parameter type="GtkTreeModelFilterVisibleFunc" name="func" />
+          <parameter type="gpointer" name="data" />
+          <parameter type="GDestroyNotify" name="destroy" />
+        </parameters>
+      </method>
+      <method name="GetModel" cname="bluetooth_client_get_model">
+        <return-type type="GtkTreeModel*" />
+      </method>
+      <method name="GetType" cname="bluetooth_client_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <constructor cname="bluetooth_client_new" />
+    </object>
+    <object name="FilterWidget" cname="BluetoothFilterWidget" parent="GtkBox">
+      <class_struct cname="BluetoothFilterWidgetClass">
+        <field name="ParentClass" cname="parent_class" type="GtkBoxClass" />
+      </class_struct>
+      <method name="BindFilter" cname="bluetooth_filter_widget_bind_filter">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="BluetoothChooser*" name="chooser" />
+        </parameters>
+      </method>
+      <method name="GetType" cname="bluetooth_filter_widget_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <constructor cname="bluetooth_filter_widget_new" />
+      <method name="SetTitle" cname="bluetooth_filter_widget_set_title">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="gchar*" name="title" />
+        </parameters>
+      </method>
+    </object>
+    <object name="Killswitch" cname="BluetoothKillswitch" parent="GObject">
+      <class_struct cname="BluetoothKillswitchClass">
+        <field name="ParentClass" cname="parent_class" type="GObjectClass" />
+        <method vm="state_changed" />
+      </class_struct>
+      <field name="Priv" cname="priv" type="BluetoothKillswitchPrivate*" />
+      <virtual_method name="StateChanged" cname="state_changed">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="BluetoothKillswitchState" name="state" />
+        </parameters>
+      </virtual_method>
+      <method name="GetState" cname="bluetooth_killswitch_get_state">
+        <return-type type="BluetoothKillswitchState" />
+      </method>
+      <method name="GetType" cname="bluetooth_killswitch_get_type" shared="true">
+        <return-type type="GType" />
+      </method>
+      <method name="HasKillswitches" cname="bluetooth_killswitch_has_killswitches">
+        <return-type type="gboolean" />
+      </method>
+      <constructor cname="bluetooth_killswitch_new" />
+      <method name="SetState" cname="bluetooth_killswitch_set_state">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="BluetoothKillswitchState" name="state" />
+        </parameters>
+      </method>
+      <method name="StateToString" cname="bluetooth_killswitch_state_to_string" shared="true">
+        <return-type type="const-char*" />
+        <parameters>
+          <parameter type="BluetoothKillswitchState" name="state" />
+        </parameters>
+      </method>
+    </object>
+    <struct name="GbtPlugin" cname="GbtPlugin">
+      <field name="Module" cname="module" type="GModule*" />
+      <field name="Info" cname="info" type="GbtPluginInfo*" />
+    </struct>
+    <struct name="GbtPluginInfo" cname="GbtPluginInfo">
+      <field name="Id" cname="id" type="const-char*" />
+      <callback cname="has_config_widget">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="const-char*" name="bdaddr," />
+        </parameters>
+      </callback>
+      <callback cname="get_config_widgets">
+        <return-type type="GtkWidget*" />
+        <parameters>
+          <parameter type="const-char*" name="bdaddr," />
+        </parameters>
+      </callback>
+      <callback cname="device_removed">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="bdaddr" />
+        </parameters>
+      </callback>
+    </struct>
+    <class name="Global" cname="BluetoothGlobal">
+      <method name="ClassToType" cname="bluetooth_class_to_type" shared="true">
+        <return-type type="BluetoothType" />
+        <parameters>
+          <parameter type="guint32" name="class" />
+        </parameters>
+      </method>
+      <method name="SendToAddress" cname="bluetooth_send_to_address" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="address" />
+          <parameter type="const-char*" name="alias" />
+        </parameters>
+      </method>
+      <method name="TypeToString" cname="bluetooth_type_to_string" shared="true">
+        <return-type type="const-gchar*" />
+        <parameters>
+          <parameter type="guint" name="type" />
+        </parameters>
+      </method>
+      <method name="UuidToString" cname="bluetooth_uuid_to_string" shared="true">
+        <return-type type="const-char*" />
+        <parameters>
+          <parameter type="const-char*" name="uuid" />
+        </parameters>
+      </method>
+      <method name="VerifyAddress" cname="bluetooth_verify_address" shared="true">
+        <return-type type="gboolean" />
+        <parameters>
+          <parameter type="const-char*" name="bdaddr" />
+        </parameters>
+      </method>
+    </class>
+    <class name="Plugin" cname="BluetoothPlugin_">
+      <method name="ManagerCleanup" cname="bluetooth_plugin_manager_cleanup" shared="true">
+        <return-type type="void" />
+      </method>
+      <method name="ManagerDeviceDeleted" cname="bluetooth_plugin_manager_device_deleted" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="bdaddr" />
+        </parameters>
+      </method>
+      <method name="ManagerGetWidgets" cname="bluetooth_plugin_manager_get_widgets" shared="true">
+        <return-type type="GList*" />
+        <parameters>
+          <parameter type="const-char*" name="bdaddr" />
+          <parameter type="const-char**" name="uuids" />
+        </parameters>
+      </method>
+      <method name="ManagerInit" cname="bluetooth_plugin_manager_init" shared="true">
+        <return-type type="gboolean" />
+      </method>
+    </class>
+  </namespace>
+</api>

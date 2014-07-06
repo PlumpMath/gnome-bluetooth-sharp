@@ -1,0 +1,10 @@
+<gapi-parser-input>
+ <api filename="./gnome-bluetooth.raw">
+   <library name="libgnome-bluetooth.dll">
+     <namespace name="Bluetooth">
+       <dir>/usr/include/gnome-bluetooth</dir>
+     </namespace>
+   </library>
+ </api>
+</gapi-parser-input>
+

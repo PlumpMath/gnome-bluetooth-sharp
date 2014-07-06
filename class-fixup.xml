@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<metadata>
+  <attr path="/api/namespace/class/method[@cname='bluetooth_class_to_type']/parameters/parameter[@name='class']" name="name">cls</attr>
+  <attr path="/api/namespace/object[@cname='BluetoothChooserButton']" name="parent">GtkButton</attr>
+  <attr path="/api/namespace/object[@cname='BluetoothChooserCombo']" name="parent">GtkBox</attr>
+</metadata>
