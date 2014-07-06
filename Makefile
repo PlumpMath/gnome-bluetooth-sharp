@@ -2,7 +2,7 @@ G3P = gapi3-parser
 G3F = gapi3-fixup
 G3C = gapi3-codegen
 G3C_FLAGS = `pkg-config --cflags glib-sharp-3.0` `pkg-config --cflags gtk-sharp-3.0`
-MCS = mcs
+MCS = dmcs
 OPTS = -unsafe -pkg:glib-sharp-3.0 -pkg:gtk-sharp-3.0
 OUT = gnome-bluetooth-sharp.dll
 TARGET = library
@@ -46,8 +46,9 @@ $(OUT): $(SOURCES)
 	$(MCS) $(OPTS) -out:$(OUT) -target:$(TARGET) $(SOURCES)
 
 clean:
+	$(RM) $(OUT)
+
+distclean: clean
 	$(RM) $(GAPI_RAW)
 	$(RM) $(GAPI_API)
-	$(RM) $(SOURCES)
-	$(RM) $(OUT)
 	$(RM) -r gen

@@ -1,1 +1,5 @@
 *.dll
+*.userprefs
+
+bin/
+obj/
