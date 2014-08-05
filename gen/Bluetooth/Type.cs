@@ -25,6 +25,11 @@ namespace Bluetooth {
 		Joypad = 1 << 12,
 		Tablet = 1 << 13,
 		Video = 1 << 14,
+		RemoteControl = 1 << 15,
+		Scanner = 1 << 16,
+		Display = 1 << 17,
+		Wearable = 1 << 18,
+		Toy = 1 << 19,
 	}
 #endregion
 }

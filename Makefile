@@ -12,23 +12,20 @@ GAPI_RAW = gnome-bluetooth.raw
 GAPI_FIX_METADATA = class-fixup.xml
 GAPI_API = gnome-bluetooth.xml
 
-SOURCES = gen/Bluetooth/Category.cs \
-		  gen/Bluetooth/ChooserButton.cs \
-		  gen/Bluetooth/ChooserCombo.cs \
-		  gen/Bluetooth/Chooser.cs \
-		  gen/Bluetooth/Client.cs \
-		  gen/Bluetooth/Column.cs \
-		  gen/Bluetooth/FilterWidget.cs \
-		  gen/Bluetooth/GbtPlugin.cs \
-		  gen/Bluetooth/GbtPluginInfo.cs \
-		  gen/Bluetooth/Global.cs \
-		  gen/Bluetooth/Killswitch.cs \
-		  gen/Bluetooth/KillswitchState.cs \
-		  gen/Bluetooth/Plugin.cs \
-		  gen/Bluetooth/Status.cs \
-		  gen/Bluetooth/Type.cs \
-		  gen/GLib/GLibSharp.AsyncReadyCallbackNative.cs \
-		  gen/Gtk/GtkSharp.TreeModelFilterVisibleFuncNative.cs
+SOURCES =  \
+	gen/Bluetooth/Category.cs \
+	gen/Bluetooth/Chooser.cs \
+	gen/Bluetooth/ChooserButton.cs \
+	gen/Bluetooth/ChooserCombo.cs \
+	gen/Bluetooth/Client.cs \
+	gen/Bluetooth/Column.cs \
+	gen/Bluetooth/FilterWidget.cs \
+	gen/Bluetooth/Global.cs \
+	gen/Bluetooth/SettingsWidget.cs \
+	gen/Bluetooth/Status.cs \
+	gen/Bluetooth/Type.cs \
+	gen/GLib/GLibSharp.AsyncReadyCallbackNative.cs \
+	gen/Gtk/GtkSharp.TreeModelFilterVisibleFuncNative.cs
 
 all: $(OUT)
 

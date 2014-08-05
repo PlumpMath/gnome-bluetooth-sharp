@@ -87,17 +87,6 @@ namespace Bluetooth {
 		}
 
 		[DllImport("libgnome-bluetooth.dll", CallingConvention = CallingConvention.Cdecl)]
-		static extern bool bluetooth_client_get_connectable(IntPtr uuids);
-
-		public static bool GetConnectable(string uuids) {
-			IntPtr native_uuids = GLib.Marshaller.StringToPtrGStrdup (uuids);
-			bool raw_ret = bluetooth_client_get_connectable(native_uuids);
-			bool ret = raw_ret;
-			GLib.Marshaller.Free (native_uuids);
-			return ret;
-		}
-
-		[DllImport("libgnome-bluetooth.dll", CallingConvention = CallingConvention.Cdecl)]
 		static extern IntPtr bluetooth_client_get_device_model(IntPtr raw);
 
 		public Gtk.ITreeModel DeviceModel { 
